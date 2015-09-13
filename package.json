@@ -1,0 +1,42 @@
+{
+  "name": "get-arrows",
+  "version": "0.0.0",
+  "description": "My mathematical module",
+  "license": "MIT",
+  "repository": "davidohlin/get-arrows",
+  "author": {
+    "name": "David Öhlin",
+    "email": "hello@davidohlin.se",
+    "url": "davidohlin.se"
+  },
+  "bin": "cli.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && mocha"
+  },
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cli-app",
+    "cli",
+    ""
+  ],
+  "dependencies": {
+    "meow": "^3.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "unicode-arrows": "^1.0.1",
+    "xo": "^0.7.1"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ]
+  }
+}
