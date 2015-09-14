@@ -1,28 +1,48 @@
 'use strict';
 var unicodeArrows = require('unicode-arrows');
+var objectAssign = require('object-assign');
+var mergeArray = require('merge-array');
 
-exports.getArrows = function (direction, amount) {
-	var currentArrows = [];
+module.exports = function (opts) {
+	opts = objectAssign({}, opts);
 
-	if (direction === undefined) {
+	var arrowList = [];
+
+	if (!opts.direction) {
 		Object.keys(unicodeArrows).map(function(prop) {
-			currentArrows.push.apply(currentArrows, unicodeArrows[prop]);
+			mergeArray(arrowList, unicodeArrows[prop]);
 		});
 	} else {
-		currentArrows = unicodeArrows[direction];
+		var args = [];
+
+		Object.keys(unicodeArrows).map(function(prop) {
+			args.push.apply(args, [prop]);
+		});
+
+		if (args.indexOf(opts.direction) > -1) {
+			arrowList = unicodeArrows[opts.direction];
+		} else {
+			throw new TypeError('Invalid direction. Valid directions are' + args);
+		}
 	}
 
-	if (amount !== undefined) {
-		var result = new Array(amount),
-   		    length = currentArrows.length,
-   		    taken = new Array(length);
-   		if (amount > length)
-   		    throw new RangeError("getRandom: more elements taken than available");
-   		while (amount--) {
-   		    var x = Math.floor(Math.random() * length);
-   		    result[amount] = currentArrows[x in taken ? taken[x] : x];
-   		    taken[x] = --length;
-   		}
-   		console.log(result);
+	if (!opts.amount) {
+		return arrowList;
 	}
+	
+	var randomArrows = new Array(opts.amount);
+	var length = arrowList.length;
+	var taken = new Array(length);
+	
+	if (opts.amount > length) {
+		return arrowList;
+	}
+
+	while (opts.amount--) {
+		var x = Math.floor(Math.random() * length);
+		randomArrows[opts.amount] = arrowList[x in taken ? taken[x] : x];
+		taken[x] = --length;
+	}
+
+	return randomArrows;	
 };

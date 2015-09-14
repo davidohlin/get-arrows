@@ -1,4 +1,9 @@
 'use strict';
 var getArrows = require('./');
 
-getArrows.getArrows('e', 5);
+var arrows = getArrows({
+	direction: 'n',
+	amount: 5
+});
+
+console.log(arrows);

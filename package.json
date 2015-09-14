@@ -1,7 +1,7 @@
 {
   "name": "get-arrows",
   "version": "0.0.0",
-  "description": "My mathematical module",
+  "description": "My neat module",
   "license": "MIT",
   "repository": "davidohlin/get-arrows",
   "author": {
@@ -30,7 +30,6 @@
   },
   "devDependencies": {
     "mocha": "^2.2.5",
-    "unicode-arrows": "^1.0.1",
     "xo": "^0.7.1"
   },
   "xo": {

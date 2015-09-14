@@ -6,16 +6,24 @@ var getArrows = require('./');
 var cli = meow({
 	help: [
 		'Usage',
-		'  $ get-arrows [input]',
+		'  $ get-arrows [direction] [amount]',
 		'',
-		'Options',
-		'  --foo  Lorem ipsum. [Default: false]',
+		'Direction',
+		'  The following are accepted directions:',
+		'  n, ne, e, se, s, sw, w, nw, ns and se.',
+		'',
+		'Amount',
+		'  There is a limited amount of arrows avaiable. If exceeded, all available arrows will be returned.',
 		'',
 		'Examples',
-		'  $ get-arrows',
-		'  unicorns & rainbows',
-		'  $ get-arrows ponies',
-		'  ponies & rainbows'
+		'  $ get-arrows n 4',
+		'  ⇭ ⇡ ⇧ ↟',
+		'  $ get-arrows s 3',
+		'  ↶ ⇣ ⇟',
+		'  $ get-arrows sw',
+		'  ↙ ⇙',
+		'  $ get-arrows 4',
+		'↼ ⇇ ↕ ↿'
 	]
 });
 
