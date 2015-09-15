@@ -13,7 +13,7 @@ var cli = meow({
 		'  n, ne, e, se, s, sw, w, nw, ns and se.',
 		'',
 		'Amount',
-		'  There is a limited amount of arrows avaiable. If exceeded, all available arrows will be returned.',
+		'  There is a limited amount of arrows available. If exceeded, all available arrows will be returned.',
 		'',
 		'Examples',
 		'  $ get-arrows n 4',
@@ -23,8 +23,17 @@ var cli = meow({
 		'  $ get-arrows sw',
 		'  ↙ ⇙',
 		'  $ get-arrows 4',
-		'↼ ⇇ ↕ ↿'
+		'  ↼ ⇇ ↕ ↿'
 	]
 });
 
-console.log(getArrows(cli.input[0] || 'unicorns'));
+if (!cli.input[0]) {
+	var arrows = getArrows();
+	console.log(arrows.join(' '));
+} else {
+	var arrows = getArrows({
+		direction: cli.input[0],
+		amount: cli.input[1]
+	});
+	console.log(arrows.join(' '));
+}
