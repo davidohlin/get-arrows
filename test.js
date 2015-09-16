@@ -1,9 +1,13 @@
 'use strict';
+var test = require('ava');
 var getArrows = require('./');
 
 var arrows = getArrows({
 	direction: 'n',
-	amount: 5
+	amount: 8
 });
 
-console.log(arrows);
+test(function (t) {
+	t.is(Array.isArray(arrows), true);
+	t.end();
+});

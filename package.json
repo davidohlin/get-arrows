@@ -14,28 +14,33 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "xo && mocha"
+    "test": "xo && ava"
   },
   "files": [
     "index.js",
     "cli.js"
   ],
   "keywords": [
-    "cli-app",
-    "cli",
-    ""
+    "unicode",
+    "arrows",
+    "arrow",
+    "characters"
   ],
   "dependencies": {
-    "meow": "^3.3.0"
+    "array-max-length": "^1.0.1",
+    "array-shuffle": "^1.0.0",
+    "meow": "^3.3.0",
+    "merge-array": "^1.0.0",
+    "object-assign": "^4.0.1",
+    "unicode-arrows": "^1.0.1"
   },
   "devDependencies": {
-    "mocha": "^2.2.5",
+    "ava": "^0.2.0",
     "xo": "^0.7.1"
   },
   "xo": {
     "envs": [
-      "node",
-      "mocha"
+      "node"
     ]
   }
 }
