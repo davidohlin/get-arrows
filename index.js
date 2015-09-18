@@ -18,13 +18,13 @@ module.exports = function (opts) {
 		var args = [];
 
 		Object.keys(unicodeArrows).map(function (prop) {
-			args.push.apply(args, [prop]);
+			mergeArray(args, [prop]);
 		});
 
 		if (args.indexOf(opts.direction) > -1) {
 			arrowList = unicodeArrows[opts.direction];
 		} else {
-			throw new TypeError('Invalid direction. Valid directions are' + args);
+			throw new TypeError('Invalid direction. Valid directions are ' + args.join(', '));
 		}
 	}
 

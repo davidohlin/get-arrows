@@ -18,55 +18,36 @@ var getArrows = require('get-arrows');
 var arrows = getArrows({
 	direction: 'n',
 	amount: 5
-})
+});
 
-console.log(arrows)
+console.log(arrows);
 //=> [ '⇑', '⇈', '⇮', '↾', '⇧' ]
 ```
-
-
-## API
-
-### getArrows(input, [options])
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`  
-Default: `false`
-
-Lorem ipsum.
 
 
 ## CLI
 
 ```
-$ npm install --global get-arrows
+$ npm install --g get-arrows
 ```
 
 ```
 $ get-arrows --help
+	
+		Usage
+			$ get-arrows <direction> <amount>
 
-  Usage
-    get-arrows [input]
+		Direction
+		  Accepted directions:
+		  n, ne, e, se, s, sw, w, nw, ns and se
 
-  Options
-    --foo  Lorem ipsum. [Default: false]
+		Amount
+		  There is a limited amount of arrows available. If exceeded, all available arrows will be returned.
 
-  Examples
-    $ get-arrows
-    unicorns & rainbows
-    $ get-arrows ponies
-    ponies & rainbows
+		Examples
+		  $ get-arrows n 4
+		  ⇭ ⇡ ⇧ ↟
 ```
-
 
 ## License
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 var meow = require('meow');
+var numberIsInteger = require('number-is-integer');
 var getArrows = require('./');
 
 var cli = meow({
@@ -9,7 +10,7 @@ var cli = meow({
 		'  $ get-arrows [direction] [amount]',
 		'',
 		'Direction',
-		'  The following are accepted directions:',
+		'  Accepted directions:',
 		'  n, ne, e, se, s, sw, w, nw, ns and se.',
 		'',
 		'Amount',
@@ -28,12 +29,21 @@ var cli = meow({
 });
 
 if (!cli.input[0]) {
-	var arrows = getArrows();
-	console.log(arrows.join(' '));
+	console.log(getArrows().join(' '));
 } else {
-	var arrows = getArrows({
-		direction: cli.input[0],
-		amount: cli.input[1]
-	});
-	console.log(arrows.join(' '));
+	var direction;
+	var amount;
+
+	for (var i = 0; i < cli.input.length; i++) {
+		if (typeof cli.input[i] === 'string' && !direction) {
+			direction = cli.input[i];
+		} else if (numberIsInteger(cli.input[i]) && !amount) {
+			amount = cli.input[i];
+		}
+	}
+
+	console.log(getArrows({
+		direction: direction,
+		amount: amount
+	}).join(' '));
 }

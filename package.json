@@ -31,6 +31,7 @@
     "array-shuffle": "^1.0.0",
     "meow": "^3.3.0",
     "merge-array": "^1.0.0",
+    "number-is-integer": "^1.0.0",
     "object-assign": "^4.0.1",
     "unicode-arrows": "^1.0.1"
   },
