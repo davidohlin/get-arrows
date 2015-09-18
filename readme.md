@@ -34,19 +34,19 @@ $ npm install --g get-arrows
 ```
 $ get-arrows --help
 	
-		Usage
-			$ get-arrows <direction> <amount>
+	Usage
+		$ get-arrows <direction> <amount>
 
-		Direction
-		  Accepted directions:
-		  n, ne, e, se, s, sw, w, nw, ns and se
+	Direction
+		Accepted directions:
+		n, ne, e, se, s, sw, w, nw, ns and se
 
-		Amount
-		  There is a limited amount of arrows available. If exceeded, all available arrows will be returned.
+	Amount
+		There is a limited amount of arrows available. If exceeded, all available arrows will be returned.
 
-		Examples
-		  $ get-arrows n 4
-		  ⇭ ⇡ ⇧ ↟
+	Examples
+		$ get-arrows n 4
+		⇭ ⇡ ⇧ ↟
 ```
 
 ## License
