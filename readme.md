@@ -1,6 +1,6 @@
 # get-arrows [![Build Status](https://travis-ci.org/davidohlin/get-arrows.svg?branch=master)](https://travis-ci.org/davidohlin/get-arrows)
 
-> My neat module
+> Get a set of unicode arrows.
 
 
 ## Install
