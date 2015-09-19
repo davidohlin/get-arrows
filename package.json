@@ -1,7 +1,7 @@
 {
   "name": "get-arrows",
   "version": "1.0.0",
-  "description": "My neat module",
+  "description": "Get a set of unicode arrows.",
   "license": "MIT",
   "repository": "davidohlin/get-arrows",
   "author": {
@@ -29,6 +29,7 @@
   "dependencies": {
     "array-max-length": "^1.0.1",
     "array-shuffle": "^1.0.0",
+    "grammarray": "^1.0.2",
     "meow": "^3.3.0",
     "merge-array": "^1.0.0",
     "number-is-integer": "^1.0.0",
